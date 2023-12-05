@@ -31,10 +31,8 @@ export default function getCalendarMatrix(date) {
     }
 
     return calendar.map((_, i, curArr) => curArr.slice(i * 7, i* 7 + 7)).filter(week => week.length);
-    
-
 }
 
-const date  = new Date(2023, 1 ,9);
+// const date  = new Date(2023, 1 ,9);
 
-getCalendarMatrix(date)
+// getCalendarMatrix(date)
