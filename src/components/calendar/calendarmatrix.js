@@ -30,7 +30,7 @@ export default function getCalendarMatrix(date) {
         }
     }
 
-    return calendar.map((_, i, curArr) => curArr.slice(i *7, i*7 + 7)).filter(week => week.length);
+    return calendar.map((_, i, curArr) => curArr.slice(i * 7, i* 7 + 7)).filter(week => week.length);
     
 
 }
