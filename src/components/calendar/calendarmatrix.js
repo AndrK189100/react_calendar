@@ -34,3 +34,7 @@ export default function getCalendarMatrix(date) {
     
 
 }
+
+const date  = new Date(2023, 1 ,9);
+
+getCalendarMatrix(date)

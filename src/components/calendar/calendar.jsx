@@ -3,23 +3,23 @@ import './css/main.css'
 import './calendarmatrix'
 import getCalendarMatrix from './calendarmatrix'
 
-export function Calendar(props) {
+export function Calendar({date}) {
 
-    const calendarMatrix = getCalendarMatrix(props.date);
+    const calendarMatrix = getCalendarMatrix(date);
 
     return (
         <div className="ui-datepicker">
             <div className="ui-datepicker-material-header">
-                <div className="ui-datepicker-material-day">{props.date.toLocaleString('default', {weekday: 'long'})}</div>
+                <div className="ui-datepicker-material-day">{date.toLocaleString('default', {weekday: 'long'})}</div>
                 <div className="ui-datepicker-material-date">
-                    <div className="ui-datepicker-material-day-num">{props.date.getDate()}</div>
-                    <div className="ui-datepicker-material-month">{props.date.toLocaleString('default', {month: 'long'})}</div>
-                    <div className="ui-datepicker-material-year">{props.date.getFullYear()}</div>
+                    <div className="ui-datepicker-material-day-num">{date.getDate()}</div>
+                    <div className="ui-datepicker-material-month">{date.toLocaleString('default', {month: 'long'})}</div>
+                    <div className="ui-datepicker-material-year">{date.getFullYear()}</div>
                 </div>
             </div>
             <div className="ui-datepicker-header">
                 <div className="ui-datepicker-title">
-                    <span className="ui-datepicker-month">{props.date.toLocaleString('default', {month: 'long'})}</span>&nbsp;<span className="ui-datepicker-year">{props.date.getFullYear()}</span>
+                    <span className="ui-datepicker-month">{date.toLocaleString('default', {month: 'long'})}</span>&nbsp;<span className="ui-datepicker-year">{date.getFullYear()}</span>
                 </div>
             </div>
             <table className="ui-datepicker-calendar">
@@ -52,7 +52,7 @@ export function Calendar(props) {
                                         week.map(day => {
                                             return (
 
-                                                day < 0 ? <td className='ui-datepicker-other-month'>{-1*day}</td> : day === props.date.getDate() ? <td className='ui-datepicker-today'>{day}</td> : <td>{day}</td>
+                                                day < 0 ? <td className='ui-datepicker-other-month'>{-1*day}</td> : day === date.getDate() ? <td className='ui-datepicker-today'>{day}</td> : <td>{day}</td>
                                             )
                                         })
                                     }
