@@ -6,11 +6,11 @@ export default function getCalendarMatrix(date) {
     preDate.setMonth(preDate.getMonth() - 1);
 
     const daysOfMonth = 32 - new Date(date.getFullYear(), date.getMonth(), 32).getDate();
-    const preDaysOfMont = 32 - new Date(preDate.getFullYear(), preDate.getMonth(), 32).getDate();
+    const preDaysOfMonth = 32 - new Date(preDate.getFullYear(), preDate.getMonth(), 32).getDate();
     const firstDay = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
 
     for(let i = firstDay - 2; i >= 0; i--) {
-        calendar.push(-1*(preDaysOfMont - i));
+        calendar.push(-1*(preDaysOfMonth - i));
     }
     
     for(let i = 1; i <= daysOfMonth; i++) {
